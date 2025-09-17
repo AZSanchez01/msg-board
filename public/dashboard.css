@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Source Sans 3";
+  background: #f6f6f6;
+}
+.heading {
+  font-family: "Playfair Display";
+}
+
+header {
+  text-align: center;
+  background: #86180e;
+  padding: 1.5em;
+  color: white;
+}
+header h1 {
+  font-size: 3.5rem;
+}
+
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: rgb(240, 211, 195);
+}
+
+.subheader .welcome {
+  font-size: 2rem;
+}
+.subheader img {
+  max-width: 6em;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+.profile {
+  display: flex;
+  gap: 1em;
+}
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.perks-forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.perks-forms form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+.perks-forms form input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 1px solid darkslategray;
+  border-radius: 3px;
+}
+.form-inquiry {
+  font-size: 1.1em;
+}
+
+/* 3. MAIN CONTENT */
+main {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  height: 200vh;
+  padding: 1rem;
+}
+#msgForm {
+  position: relative;
+}
+
+#msgForm form {
+  position: sticky;
+  background: rgb(237, 237, 237);
+  top: 2em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  border: 1px solid darkslategray;
+}
+#msgForm textarea {
+  min-height: 33ch;
+}
+
+.cards-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50ch, 1fr));
+  gap: 1em;
+}
+
+.card {
+  padding: 1em;
+  border: 1px solid darkslategrey;
+  border-radius: 1em;
+  position: relative;
+  box-shadow: 1px 1px 1px rgb(192, 192, 192);
+}
+.card-title {
+  max-width: 80%;
+  font-size: 1.25rem;
+  max-height: 305px;
+}
+.card-message {
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  max-height: 20ch;
+}
+.card-meta-info {
+  margin-top: 1rem;
+  display: block;
+}
+.del-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 0;
+  font-size: 1.5rem;
+  border: none;
+  background-color: rgb(225, 225, 225);
+  border-radius: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  transition: background-color linear 0.15s;
+}
+.del-btn:hover {
+  background: rgb(255, 123, 123);
+}

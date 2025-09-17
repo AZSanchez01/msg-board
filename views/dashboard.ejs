@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Dashboard</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <title>Relapse FW | <%= title %></title>
+  </head>
+  <body>
+    <header>
+      <h1 class="heading"><b>FreeWrite Freedom Wall</b></h1>
+      <small>Para sa mga nagbigay ng lahat pero di pa rin sapat</small>
+    </header>
+    <div class="subheader">
+      <div class="profile">
+        <img src="https://static.wikia.nocookie.net/c00fb0b4-f89b-43d6-86c3-bdb4d1b70e64/scale-to-width/370" alt="">
+        <div class="profile-text">
+            <h2 class="heading welcome">Welcome back, <%= user.first_name %></h2>
+            <p><%= user.username %></p>
+            <small><a href="/logout">Log out</a></small>
+        </div>
+      </div>
+      <small>
+          <div class="perks-forms">
+            <div class="form-inquiry heading"><b>Want to become a member/admin?</b></div>
+            <form action="/member-form" method="POST">
+              <label for="member_code">Enter Member Code:</label>
+              <input type="text" name="member_code" id="member_code" />
+              <button type="submit">Enter</button>
+            </form>
+            <form action="/admin-form" method="POST">
+              <label for="admin_code">Enter Admin Code:</label>
+              <input type="text" name="admin_code" id="admin_code" />
+              <button type="submit">Enter</button>
+            </form>
+      </small>
+      </div>
+    </div>
+    <main>
+      <div id="msgForm">
+        <form action="/submit-message" method="POST">
+          <h3>Create Message:</h3>
+
+          <label for="message_title">Title:</label>
+          <input type="text" name="message_title" id="message_title" required />
+          <br />
+
+          <label for="message">Message:</label>
+          <textarea name="message" id="message"></textarea> <br />
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="msgBoard">
+        <ul class="cards-list">
+          <% for(const message of messages) { %>
+          <li class="card">
+            <h3 class="card-title"><%= message.message_title %></h3>
+            <p class="card-message"><%= message.message %></p>
+            <% if (user.member) { %>
+            <small class="card-meta-info"
+              >By: <%= message.author %> | Timestamp: <%= message.timestamp
+              %></small
+            >
+            <% } else { %>
+            <small class="card-meta-info">By: Anonymous | Timestamp: Unknown</small>
+            <% } %> <% if (user.admin) { %>
+            <form action="/delete" method="POST">
+              <button
+                type="submit"
+                name="messageID"
+                class="del-btn"
+                value="<%= message.id %>"
+              >
+                ×
+              </button>
+            </form>
+            <% } %>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </main>
+  </body>
 </html>
