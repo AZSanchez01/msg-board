@@ -21,7 +21,7 @@ async function verifyCallback (username, password, done) {
 const strategy = new LocalStrategy(verifyCallback);
 passport.use(strategy);
 
-passport.serializeuser((user, done) => {
+passport.serializeUser((user, done) => {
     done(null, user.username);
 });
 
@@ -33,4 +33,4 @@ passport.deserializeUser(async (username, done) => {
     catch (err) {
         done(err);  
     }
-})
+});
