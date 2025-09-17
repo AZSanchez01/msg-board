@@ -1,15 +1,22 @@
 const { Router } = require('express');
+const router = new Router();
 const userController = require('../controllers/userController');
-const pool = require('../model/pool');
-const router = Router();
 
 
-router.get("/", userController.loginGet);
-router.get("/sign-up", userController.signupGet);
-router.get("/dashboard", userController.dashboardGet);
+router.get('/', userController.indexLoginGet);
+router.post('/login', userController.indexLoginPost);
+router.get('/logout', userController.logoutGet);
 
+router.get('/sign-up', userController.signupGet);
+router.post('/sign-up', userController.signupPost);
 
+router.get('/dashboard', userController.dashboardGet);
+router.post('/member-form', userController.setMemberPost);
+router.post('/admin-form', userController.setAdminPost);
 
-router.use(userController.errorGet);
+router.post('/submit-message', userController.createMessagePost);
+router.post('/delete', userController.deleteMessagePost);
+
+router.use(userController.errorDefault);
 
 module.exports = router;
