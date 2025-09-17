@@ -30,7 +30,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // APP ROUTES LOGIC
+app.use(express.static("public"));
 app.use(router);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, "0.0.0.0", () => console.log("Server running..."));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log("Server running..."));

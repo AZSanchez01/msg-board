@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login.css">
     <title>Log-in</title>
 </head>
 <body>
-    <h1>Log-in page</h1>
+    <div class="img-wrapper">
+        <img src="https://i.pinimg.com/736x/56/c7/46/56c7466602acbf957351022994382517.jpg" alt="">
+    </div>
+    <div class="form-wrapper">
+        <form action="/login" method="POST">
+            <h1 class="heading">Welcome Back!</h1>
+            <div>
+                <h2>Log-in</h2>
+                <label for="username">E-mail: </label>
+                <input type="email" name="username" id="username" placeholder="Enter e-mail" required>  <br> 
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" placeholder="Enter password" required>  <br> 
+                <button type="submit">Submit</button> <br> <br>
+                <hr>
+                <small>Don't have an account? <a href="/sign-up">Sign-up</a></small> <br>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* CSS RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    font-family: "Source Sans 3";
+  }
+
+.heading {
+  font-family: "Playfair Display";
+}
+
+.form-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-image: url('https://media.istockphoto.com/id/470721440/vector/books-seamless-pattern.jpg?s=612x612&w=0&k=20&c=SBWwuWALkou5kDTDq6_V7SGuBMJ4vxTK3y15B9ZSFDE=');
+}
+img {
+  max-height: 100%;
+}
+
+form {
+  border: 2px solid gray;
+  max-width: 70ch;
+  position: relative;
+  padding: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: white;
+}
+
+form h1 {
+  font-size: 3rem;
+}
+
+form h2 {
+  margin-bottom: 1rem;
+}
+
+form input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid darkslategray;
+  display: block;
+  width: 100%;
+}
+button {
+  width: 100%;
+  border-radius: 0.5em;
+  outline: none;
+  border: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background: rgb(255, 115, 0);
+  color: white;
+  font-weight: bold;
+}
+
+@media (width < 651px) {
+  img {
+    display: none;
+  }
+}
