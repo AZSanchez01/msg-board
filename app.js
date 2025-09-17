@@ -25,6 +25,9 @@ app.use(expressSession({
 }));
 
 // PASSPORT AUTHENTICATION
+require('./config/passport');
+app.use(passport.initialize());
+app.use(passport.session());
 
 // APP ROUTES LOGIC
 app.use(router);
