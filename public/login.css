@@ -106,6 +106,10 @@ button {
   font-weight: bold;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
 @media (width < 651px) {
   img {
     display: none;

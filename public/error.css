@@ -46,82 +46,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    font-family: "Source Sans 3";
-  }
-
-.heading {
-  font-family: "Playfair Display";
-}
-
-.form-wrapper {
-    flex: 1;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    background-image: url('https://media.istockphoto.com/id/470721440/vector/books-seamless-pattern.jpg?s=612x612&w=0&k=20&c=SBWwuWALkou5kDTDq6_V7SGuBMJ4vxTK3y15B9ZSFDE=');
+    gap: 1rem;
+    font-family: "Source Sans 3";
+    text-align: center;
+    font-size: clamp(0.8rem, calc(0.4rem + 1vw  ), 1rem);
+    background: url('https://i.pinimg.com/736x/fb/3f/4e/fb3f4e603e10a518c4dff791eb2685bc.jpg');
+    background-size: cover;
+  }
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    padding: 4.5em;
+    background: rgba(220, 220, 220, 0.5);
+    backdrop-filter: blur(0.5em);
+    color: rgb(35, 0, 0);
 }
-
-.img-wrapper {
-    max-width: 442px;
-    flex-shrink: 2;
-}
-img {
-    object-fit: cover;
-}
-form {
-  border: 2px solid gray;
-  max-width: 70ch;
-  position: relative;
-  padding: 3rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background: white;
-}
-
-form h1 {
-  font-size: 3rem;
-}
-
-form h2 {
-  margin-bottom: 1rem;
-}
-
-form input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid darkslategray;
-  display: block;
-  width: 100%;
+.heading {
+  font-family: "Playfair Display";
+  font-size: clamp(2.5rem, calc(1.25rem + 5vw), 3.7rem);
 }
 button {
   width: 100%;
   border-radius: 0.5em;
   outline: none;
   border: none;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  background: rgb(255, 115, 0);
+  padding: 0.8em 1em;
+  background: darkred;
   color: white;
-  font-weight: bold;
 }
 button:hover {
-  opacity: 0.8;
-}
-
-.error-wrapper {
-    height: 5ch;
-    overflow-y: auto;
-    scrollbar-width: none;
-    color: red;
-}
-
-@media (width < 651px) {
-  img {
-    display: none;
-  }
+    opacity: 0.8;
 }
