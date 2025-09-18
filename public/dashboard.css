@@ -107,25 +107,6 @@ header h1 {
   flex-direction: column;
   text-align: center;
 }
-
-.perks-forms {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.perks-forms form {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1em;
-}
-.perks-forms form input {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
-  border-bottom: 1px solid darkslategray;
-  border-radius: 3px;
-}
 .form-inquiry {
   font-size: 1.1em;
 }
@@ -134,7 +115,6 @@ header h1 {
 main {
   display: grid;
   grid-template-columns: 2fr 8fr;
-  height: 200vh;
 }
 .sidebar {
   background: #4f2f2f;
@@ -165,12 +145,16 @@ main {
 #msgForm textarea {
   min-height: 33ch;
 }
-#msgForm button {
+#msgForm button,
+.perks-forms button {
   background: rgb(192, 53, 2);
   color: white;
   border: none;
   padding: 0.5em;
   border-radius: 1em;
+}
+.perks-forms button {
+  padding: 0.5em 1em;
 }
 
 .cards-list {
@@ -212,18 +196,49 @@ main {
   font-size: 1.5rem;
   border: none;
   border-radius: 50%;
-  background-color: rgb(245, 245, 245);
+  background: none;
   width: 1.9rem;
   height: 1.9rem;
   transition: background-color linear 0.15s;
 }
 .del-btn:hover {
   background: rgb(255, 123, 123);
+  color: white;
 }
 .sidebar input,
 .sidebar textarea {
   border: 1px rgb(77, 42, 42) solid;
 }
 .main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1em;
+}
+
+.perks-forms {
+  max-width: 80%;
+  background: rgb(79, 47, 47);
+  padding: 1.5em;
+  color: rgb(231, 231, 231);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+}
+.perks-forms .form-inquiry {
+  font-size: 1.7rem;
+}
+.perks-forms form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5em;
+}
+.perks-forms form input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-bottom: 1px solid darkslategray;
+  border-radius: 3px;
 }
