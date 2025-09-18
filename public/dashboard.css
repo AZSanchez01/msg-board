@@ -69,7 +69,7 @@ h6 {
 body {
   min-height: 100vh;
   font-family: "Source Sans 3";
-  background: #f6f6f6;
+  background: #faf2eb;
 }
 .heading {
   font-family: "Playfair Display";
@@ -84,30 +84,28 @@ header {
 header h1 {
   font-size: 3.5rem;
 }
-
-.subheader {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
-  background: rgb(240, 211, 195);
+.profile small {
+  color: rgb(231, 231, 231);
 }
-
-.subheader .welcome {
-  font-size: 2rem;
+.profile .profile-name {
+  font-size: 2.3rem;
 }
-.subheader img {
-  max-width: 6em;
+.profile img {
+  max-width: 15em;
   border-radius: 50%;
   border: 3px solid black;
 }
 .profile {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1em;
+  color: white;
 }
 .profile-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  text-align: center;
 }
 
 .perks-forms {
@@ -137,15 +135,26 @@ main {
   display: grid;
   grid-template-columns: 2fr 8fr;
   height: 200vh;
-  padding: 1rem;
+}
+.sidebar {
+  background: #4f2f2f;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  position: relative;
+}
+.sidebar a {
+  color: rgb(132, 255, 255);
 }
 #msgForm {
-  position: relative;
+  position: sticky;
+  top: 2em;
 }
 
 #msgForm form {
   position: sticky;
-  background: rgb(237, 237, 237);
+  background: rgb(255, 240, 240);
   top: 2em;
   padding: 1em;
   display: flex;
@@ -162,6 +171,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50ch, 1fr));
   gap: 1em;
+  padding: 0;
 }
 
 .card {
@@ -170,6 +180,7 @@ main {
   border-radius: 1em;
   position: relative;
   box-shadow: 1px 1px 1px rgb(192, 192, 192);
+  background: white;
 }
 .card-title {
   max-width: 80%;
@@ -184,6 +195,7 @@ main {
 .card-meta-info {
   margin-top: 1rem;
   display: block;
+  color: darkslategray;
 }
 .del-btn {
   position: absolute;
@@ -192,12 +204,16 @@ main {
   border-radius: 0;
   font-size: 1.5rem;
   border: none;
-  background-color: rgb(225, 225, 225);
   border-radius: 50%;
+  background-color: rgb(245, 245, 245);
   width: 1.9rem;
   height: 1.9rem;
   transition: background-color linear 0.15s;
 }
 .del-btn:hover {
   background: rgb(255, 123, 123);
+}
+
+.main-content {
+  padding: 1em;
 }
