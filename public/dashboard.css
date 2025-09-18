@@ -154,7 +154,7 @@ main {
 
 #msgForm form {
   position: sticky;
-  background: rgb(255, 240, 240);
+  background: rgb(236, 227, 227);
   top: 2em;
   padding: 1em;
   display: flex;
@@ -164,6 +164,13 @@ main {
 }
 #msgForm textarea {
   min-height: 33ch;
+}
+#msgForm button {
+  background: rgb(192, 53, 2);
+  color: white;
+  border: none;
+  padding: 0.5em;
+  border-radius: 1em;
 }
 
 .cards-list {
@@ -213,7 +220,10 @@ main {
 .del-btn:hover {
   background: rgb(255, 123, 123);
 }
-
+.sidebar input,
+.sidebar textarea {
+  border: 1px rgb(77, 42, 42) solid;
+}
 .main-content {
   padding: 1em;
 }
