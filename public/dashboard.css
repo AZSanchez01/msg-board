@@ -80,6 +80,7 @@ header {
   background: #86180e;
   padding: 1.5em;
   color: white;
+  width: 100dvw;
 }
 header h1 {
   font-size: 3.5rem;
